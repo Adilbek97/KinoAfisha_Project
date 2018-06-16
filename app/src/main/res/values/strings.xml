@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KinoAfisha_Project</string>
+    <string name="Response">response</string>
+    <string name="titleofKinoTeatr">Кинотеатры!</string>
+    <string name="titleofKino">Фильмы!</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="Title_text">Text</string>
+    <string name="todo3">todo3</string>
+</resources>
