@@ -1,10 +1,17 @@
 <resources>
-    <string name="app_name">KinoAfisha_Project</string>
+    <string name="app_name">ImportMoview</string>
+    <string name="titleofKino">Филмы</string>
+    <string name="Google">
+        <a href="http://google.com"> Google</a>
+    </string>
+    <string name="actors">Актеры: </string>
+    <string name="rejusser">Режиссер: </string>
+    <string name="country">Страна,год: </string>
+    <string name="forth">Премьера: </string>
+    <string name="vote">Оценка: </string>
+    <string name="todo2">todo2</string>
     <string name="Response">response</string>
-    <string name="titleofKinoTeatr">Кинотеатры!</string>
-    <string name="titleofKino">Фильмы!</string>
-    <string name="todo1">TODO</string>
-    <string name="todo2">TODO</string>
-    <string name="Title_text">Text</string>
-    <string name="todo3">todo3</string>
+    <string name="todo3">TODO</string>
+    <string name="Title_text">Кинотеатры</string>
+    <string name="titleofKinoTeatr">КиноТеатры</string>
 </resources>

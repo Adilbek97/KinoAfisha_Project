@@ -5,28 +5,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.adilbek.kinoafisha_project.adapterler.Adapter_KinoTeatr;
 import com.example.adilbek.kinoafisha_project.apiler.ApiKinoTeatr;
 import com.example.adilbek.kinoafisha_project.modelder.kinoteatr_model.KinoTeatr;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -48,16 +40,11 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<KinoTeatr>() {
             private Call<KinoTeatr> call;
             private Response<KinoTeatr> response;
-
-
             @Override
             public void onResponse(Call<KinoTeatr> call, Response<KinoTeatr> response) {
                 KinoTeatr kinoTeatrs = response.body();
                 recyclerView.setAdapter(new Adapter_KinoTeatr(MainActivity.this, kinoTeatrs));
-
             }
-
-
             @Override
             public void onFailure(Call<KinoTeatr> call, Throwable t) {
                 // mTextVeiew.setText("Kata Serverge jatken jok");
@@ -66,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.mian_menu, menu);
         return true;
     }

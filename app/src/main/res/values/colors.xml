@@ -2,8 +2,11 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#d9064e</color>
-    <color name="colorLime">#FF4081</color>
-    <color name="colorBackgroundKino">#0c198f</color>
-    <color name="colorYellow">#d5e730</color>
+    <color name="colorLime">#5a67ba</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorText">#99868c</color>
+    <color name="colorURL">#e91009</color>
+    <color name="colorBackground">#cbc3cf</color>
+    <color name="colorBlack">#111112</color>
+    <color name="colorBackgroundKino">#0814ef</color>
 </resources>

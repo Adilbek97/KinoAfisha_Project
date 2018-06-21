@@ -1,10 +1,12 @@
 package com.example.adilbek.kinoafisha_project.modelder.kino_modelder;
 
 import java.util.ArrayList;
-public class Kino {
-Boolean succes;
-int count;
-public  ArrayList<Result> result;
+
+public class Kino  {
+    public Boolean succes;
+    public int count;
+    public  ArrayList<Result> result;
+
 
     public Boolean getSucces() {
         return succes;
@@ -14,21 +16,15 @@ public  ArrayList<Result> result;
         return count;
     }
 
-    public void setSucces(Boolean succes) {
-        this.succes = succes;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public void setResult(ArrayList<Result> result) {
-        this.result = result;
-    }
-
     public ArrayList<Result> getResult() {
         return result;
     }
 
+    public Kino(Boolean succes, int count, ArrayList<Result> result) {
 
+        this.succes = succes;
+        this.count = count;
+        this.result = result;
+    }
 }
+

@@ -2,7 +2,9 @@ package com.example.adilbek.kinoafisha_project.adapterler;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.adilbek.kinoafisha_project.KinoActivity;
 import com.example.adilbek.kinoafisha_project.R;
-import com.example.adilbek.kinoafisha_project.KinoTeatrActivity;
 import com.example.adilbek.kinoafisha_project.modelder.kinoteatr_model.KinoTeatr;
 
 public class Adapter_KinoTeatr extends RecyclerView.Adapter<Adapter_KinoTeatr.ViewHolder> {
@@ -36,26 +38,27 @@ public class Adapter_KinoTeatr extends RecyclerView.Adapter<Adapter_KinoTeatr.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        mPosission = position;
         holder.name.setText(kinoTeatrs.result.unmain.get(position).getName());
         holder.adress.setText(kinoTeatrs.result.unmain.get(position).getAddress());
         holder.count_vote.setText(kinoTeatrs.result.unmain.get(position).getCount_vote());
         holder.phone.setText(kinoTeatrs.result.unmain.get(position).getPhone());
         holder.url.setText("https://kinoafisha.ua/" + kinoTeatrs.result.unmain.get(position).getUrl());
+        holder.url.setMovementMethod(LinkMovementMethod.getInstance());
         Glide.with(context).load("https://kinoafisha.ua/" + kinoTeatrs.result.unmain.
                 get(position).getImage()).into(holder.imageView);
+        holder.url.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://kinoafisha.ua/" + kinoTeatrs.result.unmain.get(position).getUrl()));
+                context.startActivity(browserIntent);
+            }
+        });
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, KinoTeatrActivity.class);
-                intent.putExtra("nameKinoTeatr", kinoTeatrs.result.unmain.get(position).getName());
-                intent.putExtra("adressKinoTeatr", kinoTeatrs.result.unmain.get(position).getAddress());
-                intent.putExtra("phonesKinoTeatr", kinoTeatrs.result.unmain.get(position).getPhone());
-                intent.putExtra("urlKinoTeatr", kinoTeatrs.result.unmain.get(position).getUrl());
-                intent.putExtra("imagesKinoTeatr", kinoTeatrs.result.unmain.get(position).getImage());
-                intent.putExtra("count_voteKinoTeatr", kinoTeatrs.result.unmain.get(position).getCount_vote());
-                context.startActivity(intent);
+                Intent intent = new Intent(context, KinoActivity.class);
                 Toast.makeText(context, "you clicked " + kinoTeatrs.result.unmain.get(position).getName(), Toast.LENGTH_SHORT);
+                context.startActivity(intent);
             }
         });
 
